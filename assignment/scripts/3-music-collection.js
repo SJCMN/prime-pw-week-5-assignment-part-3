@@ -28,11 +28,12 @@ console.log( addToCollection ('Ghost Not Found', 'Glasgow Comma Scale' , 2016) )
 console.log(collection);
 
 // showCollection
-// array param
-// log number of items in array
-// loop over array, log each album info
-// title by artist, published in year
 
-function showCollection () {
-  
+function showCollection ( array ) { // empty array param
+    console.log(`There are ${array.length} albums in your collection`); // log number of items in array
+    for (let i = 0; i < array.length; i++) { // loop over array, log each album info
+      console.log(`${array[i].title.toUpperCase()} by ${array[i].artist.toUpperCase()}, published in ${array[i].yearPublished}`);// format info: TITLE by ARTIST, published in YEAR
+    }
 }
+
+showCollection(collection);
