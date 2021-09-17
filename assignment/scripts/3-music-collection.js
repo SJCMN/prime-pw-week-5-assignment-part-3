@@ -18,12 +18,12 @@ function addToCollection (title, artist, yearPublished) {
   return album; // return new object
 }
 
-console.log( addToCollection ('The Beacon', 'Shy,Low' , 2021) );
-console.log( addToCollection ('Dying Surfer', 'All Them Witches' , 2015) );
-console.log( addToCollection ('More Constant', 'SubRosa' , 2013) );
-console.log( addToCollection ('Ornament', 'Teethgrynder' , 2020) );
-console.log( addToCollection ('I Seen What I Saw', '16 Horsepower' , 1995) );
-console.log( addToCollection ('Ghost Not Found', 'Glasgow Comma Scale' , 2016) );
+console.log( addToCollection ('The Beacon', 'Shy,Low', 2021) );
+console.log( addToCollection ('Dying Surfer', 'All Them Witches', 2015) );
+console.log( addToCollection ('More Constant', 'SubRosa', 2013) );
+console.log( addToCollection ('Ornament', 'Teethgrynder', 2020) );
+console.log( addToCollection ('I Seen What I Saw', '16 Horsepower', 1995) );
+console.log( addToCollection ('Ghost Not Found', 'Glasgow Comma Scale', 2016) );
 
 console.log(collection);
 
@@ -37,3 +37,24 @@ function showCollection ( array ) { // empty array param
 }
 
 showCollection(collection);
+
+// findByArtist
+
+
+
+
+// return empty array if no results found
+function findByArtist ( artist ) { // string param artist
+  let foundArtist = [] // create array to store result
+  for (let i = 0; i < collection.length; i++){ // loop over collection
+      if ( artist === collection[i].artist) { // check for artist match to object key
+      foundArtist.push( artist );// add any objects with matching artist to array
+      return foundArtist; // return the array with matching results
+    } // complete if statment
+} // complete loop
+  return foundArtist = ['Nothing Found']; // return if loop finds no match
+}
+
+
+console.log('Do you have any All Them Witches?', findByArtist( 'All Them Witches' )); // returns matching artist
+console.log('Do you have any Van Halen?', findByArtist( 'Van Halen' )); // returns nothing found 
