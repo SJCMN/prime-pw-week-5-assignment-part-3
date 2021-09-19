@@ -43,8 +43,8 @@ function findByArtist ( artist ) { // string param artist
   for (let i = 0; i < collection.length; i++){ // loop over collection
       if ( artist === collection[i].artist) { // check for artist match to object key
       foundArtist.push( collection[i] );// add any objects with matching artist to array
-    } // return the array with matching results// complete if statment
-} return foundArtist; // complete loop
+    } // complete if statment -- I keep adding the return statement here, but the loop does not complete before returning the result...
+} return foundArtist; // complete loop return array with matching objects
   return foundArtist = ['Nothing Found']; // return if loop finds no match
 }
 
@@ -61,20 +61,23 @@ function search (artist, year) { // input params artist, year
   let searchResult = [] // create array to store result
   for(let i = 0; i < collection.length; i++) { // loop over collection
     if ( artist === collection[i].artist && year === collection[i].yearPublished ) { // check for matching criteria to object key
-     searchResult.push ( artist, year ); // add items matching from collection to new array
+     searchResult.push ( collection[i] ); // add items matching from collection to new array
       return searchResult; // return new array of matching search criteria
    } if ( artist === undefined || year === undefined) {
         return collection; // if params are not provided return all albums in Collection
       } // second if statement
     } // complete loop
-    return searchResult = ['No Matches Are Found'] // return empty array if no matching results
+    return searchResult = [] // return empty array if no matching results
 };
 
 console.log('****search****');
 console.log('What do you have by The Ocean from 2020?', search( 'The Ocean', 2020));
 console.log('What do you have by The Ocean from 2019?', search( 'The Ocean', 2019));
+console.log('What do you have by All Them Witches from 2015?', search( 'All Them Witches', 2015));
 console.log('What do you have released in 2019?', search( undefined , 2019));
 console.log('What do you have released in 2019?', search( 2020 , undefined ));
+
+
 
 
 
