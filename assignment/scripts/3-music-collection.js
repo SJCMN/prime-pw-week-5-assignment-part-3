@@ -57,4 +57,34 @@ function findByArtist ( artist ) { // string param artist
 
 
 console.log('Do you have any All Them Witches?', findByArtist( 'All Them Witches' )); // returns matching artist
-console.log('Do you have any Van Halen?', findByArtist( 'Van Halen' )); // returns nothing found 
+console.log('Do you have any Van Halen?', findByArtist( 'Van Halen' )); // returns nothing found
+
+
+
+// search
+// input params artist, year
+// return new array of objects matching search criteria
+// return empty array if no matching results
+// if params are not provided return all albums in Collection
+
+function search (artist, year) {
+  let searchResult = []
+ for(let i = 0; i < collection.length; i++) {
+   if ( artist === collection[i].artist || year == collection[i].year ) {
+     searchResult.push ( artist, year ):
+     return searchResult;
+   }
+ } else if ( artist === undefined || year === undefined){
+   return collection;
+ };
+  return: searchResult = ['No Matches Are Found']
+};
+
+
+
+
+
+
+
+
+//
