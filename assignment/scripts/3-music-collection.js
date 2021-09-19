@@ -11,7 +11,6 @@ function addToCollection (title, artist, yearPublished) { // 3 params title, art
     yearPublished: yearPublished
   };
   collection.push(album); // push object to array
-  console.log(album); // log each album object as added
   return album; // return new object
 }
 
@@ -45,14 +44,14 @@ function findByArtist ( artist ) { // string param artist
   for (let i = 0; i < collection.length; i++){ // loop over collection
       if ( artist === collection[i].artist) { // check for artist match to object key
       foundArtist.push( artist );// add any objects with matching artist to array
-      return foundArtist; // return the array with matching results
-    } // complete if statment
-} // complete loop
+    } // return the array with matching results// complete if statment
+} return foundArtist; // complete loop
   return foundArtist = ['Nothing Found']; // return if loop finds no match // return empty array if no results found
 }
 
 console.log('****findByArtist****');
-console.log('Do you have any All Them Witches?', findByArtist( 'All Them Witches' )); // returns matching artist
+console.log('Do you have anything by All Them Witches?', findByArtist( 'All Them Witches' )); // returns matching artist
+console.log('Do you have anything by The Ocean?', findByArtist( 'The Ocean' )); // returns multiple matches
 console.log('Do you have any Van Halen?', findByArtist( 'Van Halen' )); // returns nothing found
 
 
