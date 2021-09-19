@@ -17,7 +17,6 @@ function addToCollection (title, artist, yearPublished) { // 3 params title, art
 
 console.log( addToCollection ('The Beacon', 'Shy,Low', 2021) );
 console.log( addToCollection ('Dying Surfer', 'All Them Witches', 2015) );
-console.log( addToCollection ('More Constant', 'SubRosa', 2013) );
 console.log( addToCollection ('Ornament', 'Teethgrynder', 2020) );
 console.log( addToCollection ('Sackcloth N Ashes', '16 Horsepower', 1995) );
 console.log( addToCollection ('Phanerozoic', 'The Ocean', 2020) );
@@ -43,10 +42,10 @@ function findByArtist ( artist ) { // string param artist
   let foundArtist = [] // create array to store result
   for (let i = 0; i < collection.length; i++){ // loop over collection
       if ( artist === collection[i].artist) { // check for artist match to object key
-      foundArtist.push( artist );// add any objects with matching artist to array
+      foundArtist.push( collection[i] );// add any objects with matching artist to array
     } // return the array with matching results// complete if statment
 } return foundArtist; // complete loop
-  return foundArtist = ['Nothing Found']; // return if loop finds no match // return empty array if no results found
+  return foundArtist = ['Nothing Found']; // return if loop finds no match
 }
 
 console.log('****findByArtist****');
