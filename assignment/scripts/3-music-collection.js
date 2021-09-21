@@ -4,23 +4,27 @@ const collection = []
 
 // addToCollection
 
-function addToCollection (title, artist, yearPublished) { // 3 params title, artist, yearPublished
+function addToCollection (title, artist, yearPublished, name, duration) { // 3 params title, artist, yearPublished
   let album = { // creat new object
     title: title,
     artist: artist,
-    yearPublished: yearPublished
+    yearPublished: yearPublished,
+    tracks: []
   };
+  album.tracks.push({name, duration});
   collection.push(album); // push object to array
   return album; // return new object
 }
 
 
-console.log( addToCollection ('The Beacon', 'Shy,Low', 2021) );
-console.log( addToCollection ('Dying Surfer', 'All Them Witches', 2015) );
-console.log( addToCollection ('Ornament', 'Teethgrynder', 2020) );
-console.log( addToCollection ('Sackcloth N Ashes', '16 Horsepower', 1995) );
-console.log( addToCollection ('Phanerozoic', 'The Ocean', 2020) );
-console.log( addToCollection ('Heliocentric', 'The Ocean', 2010) );
+console.log( addToCollection ('The Beacon', 'Shy,Low', 2021,'The Beacon 1', 150) );
+
+
+console.log( addToCollection ('Dying Surfer', 'All Them Witches', 2015, 'Dying Surfer 1', 150) );
+console.log( addToCollection ('Ornament', 'Teethgrynder', 2020, 'Ornament 1', 150) );
+console.log( addToCollection ('Sackcloth N Ashes', '16 Horsepower', 1995, 'Sackcloth N Ashes', 150) );
+console.log( addToCollection ('Phanerozoic', 'The Ocean', 2020, 'Phanerozoic 1', 150) );
+console.log( addToCollection ('Heliocentric', 'The Ocean', 2010, 'Heliocentric 1', 150) );
 
 console.log(collection);
 
